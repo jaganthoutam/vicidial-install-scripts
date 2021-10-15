@@ -188,7 +188,7 @@ wget -O /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/jaganthouta
 
 #Install Dahdi
 echo "Install Dahdi"
-yum install dahdi-linux-* -y
+yum install dahdi-* -y
 modprobe dahdi
 /usr/sbin/dahdi_cfg -vvvvvvvvvvvvv
 
