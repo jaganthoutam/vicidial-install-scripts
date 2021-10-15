@@ -6,7 +6,8 @@ export LC_ALL=C
 
 yum check-update
 yum update -y
-yum -y install epel-release 
+yum -y install epel-release
+yum update -y
 yum groupinstall 'Development Tools'
 
 #Disable SELINUX
