@@ -1,0 +1,65 @@
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+
+
+# OPTIONAL enable ip_relay(for same-machine trunking and blind monitoring)
+
+/usr/share/astguiclient/ip_relay/relay_control start 2>/dev/null 1>&2
+
+
+# Disable console blanking and powersaving
+
+/usr/bin/setterm -blank
+
+/usr/bin/setterm -powersave off
+
+/usr/bin/setterm -powerdown
+
+
+### start up the MySQL server
+
+systemctl start mariadb.service
+
+
+### start up the apache web server
+
+systemctl start httpd.service
+
+
+### roll the Asterisk logs upon reboot
+
+/usr/share/astguiclient/ADMIN_restart_roll_logs.pl
+
+
+### clear the server-related records from the database
+
+/usr/share/astguiclient/AST_reset_mysql_vars.pl
+
+
+### load dahdi drivers
+
+modprobe dahdi
+modprobe dahdi_dummy
+
+/usr/sbin/dahdi_cfg -vvvvvvvvvvvvv
+
+
+### sleep for 20 seconds before launching Asterisk
+
+sleep 20
+
+
+### start up asterisk
+
+/usr/share/astguiclient/start_asterisk_boot.pl
