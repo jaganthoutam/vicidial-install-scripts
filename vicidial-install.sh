@@ -255,14 +255,25 @@ quit
 MYSQLCREOF
 
 #Get astguiclient.conf file
-cd /root
 echo "" > /etc/astguiclient.conf
 wget -O /etc/astguiclient.conf https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/astguiclient.conf
+echo "Replace IP address in Default"
+echo "%%%%%%%%%Please Enter This Server IP ADD%%%%%%%%%%%%"
+read serveripadd
+sed -i s/SERVERIP/"$serveripadd"/g /etc/astguiclient.conf
+
+echo "Install VICIDIAL"
+perl install.pl
+
+echo "Populate AREA CODES"
+/usr/share/astguiclient/ADMIN_area_code_populate.pl
+echo "Replace OLD IP. You need to Enter your Current IP here"
+/usr/share/astguiclient/ADMIN_update_server_ip.pl --old-server_ip=10.10.10.15
 
 #Install Crontab
 wget -O /root/crontab-file https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/crontab
 crontab /root/crontab-file
-
+crontab -l
 
 #Install rc.local
 > /etc/rc.d/rc.local
