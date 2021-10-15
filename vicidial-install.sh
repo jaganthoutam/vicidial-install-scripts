@@ -286,6 +286,8 @@ wget -O /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/jaganthouta
 #Install Dahdi
 echo "Install Dahdi"
 yum install dahdi-linux-* -y
+modprobe dahdi
+/usr/sbin/dahdi_cfg -vvvvvvvvvvvvv
 
 #Install Asterisk and LibPRI
 mkdir /usr/src/asterisk
