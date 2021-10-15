@@ -263,7 +263,11 @@ read serveripadd
 sed -i s/SERVERIP/"$serveripadd"/g /etc/astguiclient.conf
 
 echo "Install VICIDIAL"
+echo "Copy sample configuration files to /etc/asterisk/ SET TO  Y*"
 perl install.pl
+
+#Secure Manager 
+sed -i s/0.0.0.0/127.0.0.1/g /etc/asterisk/manager.conf
 
 echo "Populate AREA CODES"
 /usr/share/astguiclient/ADMIN_area_code_populate.pl
