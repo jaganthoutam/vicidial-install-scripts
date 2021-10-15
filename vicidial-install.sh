@@ -16,7 +16,7 @@ systemctl disable firewalld
 #reboot
 
 yum install make patch gcc perl-Term-ReadLine-Gnu gcc-c++ subversion php php-devel php-gd gd-devel php-mbstring php-mcrypt php-imap php-ldap php-mysql php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick libxml2 libxml2-devel httpd libpcap libpcap-devel libnet ncurses ncurses-devel screen mysql-devel ntp kernel* mutt glibc.i686 wget nano unzip sipsak sox libss7* libopen* openssl libsrtp libsrtp-devel unixODBC unixODBC-devel libtool-ltdl libtool-ltdl-devel -y
-yum install sqlite-devel –y
+yum -y install sqlite-devel
 yum install mariadb-server mariadb -y
 
 cp /etc/my.cnf /etc/my.cnf.original
