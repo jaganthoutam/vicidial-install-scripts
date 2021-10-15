@@ -102,8 +102,8 @@ MYSQLCONF
 #Enable and Start httpd and MariaDb
 systemctl enable httpd.service
 systemctl enable mariadb.service
-systemctl start httpd.service
-systemctl start mariadb.service
+systemctl restart httpd.service
+systemctl restart mariadb.service
 
 #Install Perl Modules
 
