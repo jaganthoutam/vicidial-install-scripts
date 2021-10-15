@@ -8,7 +8,7 @@ yum check-update
 yum update -y
 yum -y install epel-release
 yum update -y
-yum groupinstall 'Development Tools'
+yum groupinstall 'Development Tools' -y
 
 #Disable SELINUX
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config    
