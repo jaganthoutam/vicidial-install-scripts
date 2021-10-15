@@ -190,7 +190,14 @@ wget -O /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/jaganthouta
 #Install Dahdi
 echo "Install Dahdi"
 yum install dahdi-* -y
+wget http://download.vicidial.com/beta-apps/dahdi-linux-complete-2.11.1.tar.gz
+tar xzf dahdi-linux-complete-2.11.1.tar.gz
+cd dahdi-linux-complete-2.11.1+2.11.1
+make all
+make install
 modprobe dahdi
+modprobe dahdi_dummy
+make config
 /usr/sbin/dahdi_cfg -vvvvvvvvvvvvv
 
 #Install Asterisk and LibPRI
