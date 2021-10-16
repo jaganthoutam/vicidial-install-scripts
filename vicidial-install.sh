@@ -4,18 +4,7 @@ echo "Vicidial installation Centos7 with WebPhone(WebRTC/SIP.js)"
 
 export LC_ALL=C
 
-yum check-update
-yum update -y
-yum -y install epel-release
-yum update -y
-yum groupinstall 'Development Tools' -y
-
-#Disable SELINUX
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config    
-systemctl disable firewalld
-#reboot
-
-yum install make patch gcc perl-Term-ReadLine-Gnu gcc-c++ subversion php php-devel php-gd gd-devel php-mbstring php-mcrypt php-imap php-ldap php-mysql php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick libxml2 libxml2-devel httpd libpcap libpcap-devel libnet ncurses ncurses-devel screen mysql-devel ntp kernel* mutt glibc.i686 wget nano unzip sipsak sox libss7* libopen* openssl libsrtp libsrtp-devel unixODBC unixODBC-devel libtool-ltdl libtool-ltdl-devel -y
+yum install make patch gcc perl-Term-ReadLine-Gnu gcc-c++ subversion php php-devel php-gd gd-devel php-mbstring php-mcrypt php-imap php-ldap php-mysql php-odbc php-pear php-xml php-xmlrpc curl curl-devel perl-libwww-perl ImageMagick libxml2 libxml2-devel httpd libpcap libpcap-devel libnet ncurses ncurses-devel screen mysql-devel ntp mutt glibc.i686 wget nano unzip sipsak sox libss7* libopen* openssl libsrtp libsrtp-devel unixODBC unixODBC-devel libtool-ltdl libtool-ltdl-devel -y
 yum -y install sqlite-devel
 yum install mariadb-server mariadb -y
 
