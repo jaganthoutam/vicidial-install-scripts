@@ -28,3 +28,10 @@ cd vicidial-install-centos7
 chmod +x vicidial-install.sh
 ./vicidial-install.sh
 ```
+# Install WEBRTC for VICIDIAL Now
+# DO THIS IF YOU HAVE PUBLIC DOMAIN WITH PUBLIC IP ONLY
+
+```
+chmod +x vicidial-enable-webrtc.sh
+./vicidial-enable-webrtc.sh
+```
