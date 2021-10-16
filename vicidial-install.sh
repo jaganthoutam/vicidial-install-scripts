@@ -344,7 +344,6 @@ chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 systemctl start rc-local
 
-
 read -p 'Press Enter to Reboot: '
 
 echo "Restarting Centos"
