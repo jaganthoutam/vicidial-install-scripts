@@ -59,3 +59,8 @@ dtlsverify=no
 dtlscertfile=/etc/letsencrypt/live/$DOMAINNAME/cert.pem
 dtlsprivatekey=/etc/letsencrypt/live/$DOMAINNAME/privkey.pem
 dtlssetup=actpass' where template_id='SIP_generic';"
+
+echo "update the Phone tables to set is_webphone to Y deffault"
+mysql -e "use asterisk; ALTER TABLE phones MODIFY COLUMN is_webphone ENUM('Y','N','Y_API_LAUNCH') default 'Y';"
+
+
