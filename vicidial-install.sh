@@ -244,6 +244,10 @@ modprobe dahdi_dummy
 make config
 /usr/sbin/dahdi_cfg -vvvvvvvvvvvvv
 
+read -p 'Press Enter to continue: '
+
+echo 'Continuing...'
+
 #Install Asterisk and LibPRI
 mkdir /usr/src/asterisk
 cd /usr/src/asterisk
@@ -269,6 +273,10 @@ menuselect/menuselect --enable res_srtp menuselect.makeopts
 make -j ${JOBS} all
 make install
 make samples
+
+read -p 'Press Enter to continue: '
+
+echo 'Continuing...'
 
 #Install astguiclient
 echo "Installing astguiclient"
@@ -298,6 +306,10 @@ use asterisk;
 update servers set asterisk_version='13.29.2';
 quit
 MYSQLCREOF
+
+read -p 'Press Enter to continue: '
+
+echo 'Continuing...'
 
 #Get astguiclient.conf file
 echo "" > /etc/astguiclient.conf
@@ -331,5 +343,9 @@ chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 systemctl start rc-local
 
+
+read -p 'Press Enter to Reboot: '
+
 echo "Restarting Centos"
+
 reboot
