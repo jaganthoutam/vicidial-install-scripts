@@ -36,4 +36,26 @@ echo "%%%%%%%%%%%%%%%This Wont work if you SET root Password%%%%%%%%%%%%%%%"
 mysql -e "use asterisk; update system_settings set webphone_url='PBXWebPhone/index.php';"
 
 echo "update the SIP_generic"
-mysql -e "update vicidial_conf_templates set template_contents='type=friend \nhost=dynamic' where template_id='SIP_generic';"
+mysql -e "use asterisk; update vicidial_conf_templates set template_contents='type=friend 
+host=dynamic 
+context=default 
+host=dynamic 
+trustrpid=yes 
+sendrpid=no 
+qualify=yes 
+qualifyfreq=600 
+transport=ws,wss,udp
+encryption=yes
+avpf=yes
+icesupport=yes
+rtcp_mux=yes
+directmedia=no
+disallow=all
+allow=ulaw,opus,vp8,h264
+nat=yes
+directmedia=no 
+dtlsenable=yes
+dtlsverify=no
+dtlscertfile=/etc/letsencrypt/live/$DOMAINNAME/cert.pem
+dtlsprivatekey=/etc/letsencrypt/live/$DOMAINNAME/privkey.pem
+dtlssetup=actpass' where template_id='SIP_generic';"
