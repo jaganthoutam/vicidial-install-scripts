@@ -1,4 +1,4 @@
-#  CentOS7 VICIDIAL INSTALLATION
+#  CentOS7 VICIDIAL INSTALLATION SCRIPT
 # Install pre_requisites for vididial 
 
 
