@@ -242,6 +242,7 @@ make install
 modprobe dahdi
 modprobe dahdi_dummy
 make config
+cp /etc/dahdi/system.conf.sample /etc/dahdi/system.conf
 /usr/sbin/dahdi_cfg -vvvvvvvvvvvvv
 
 read -p 'Press Enter to continue: '
