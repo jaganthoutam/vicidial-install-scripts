@@ -19,7 +19,7 @@ reboot
 ````
   Reboot Before running this script
 
-#Install VICIDIAL Now
+# Install VICIDIAL Now
 
 ```
 git clone https://github.com/jaganthoutam/vicidial-install-centos7.git
