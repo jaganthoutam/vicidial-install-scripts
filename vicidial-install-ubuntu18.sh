@@ -89,9 +89,12 @@ ldconfig
 
 #Install CPAMN
 cd /usr/bin/
-apt install cpanminus
+apt install cpanminus -y
 curl -LOk http://xrl.us/cpanm
 chmod +x cpanm
+cpanm readline --force
+read -p 'Press Enter to continue Install perl modules: '
+
 cpanm -f File::HomeDir
 cpanm -f File::Which
 cpanm CPAN::Meta::Requirements
@@ -100,7 +103,6 @@ cpanm YAML
 cpanm MD5
 cpanm Digest::MD5
 cpanm Digest::SHA1
-cpanm readline --force
 cpanm Bundle::CPAN
 cpanm DBI
 cpanm -f DBD::mysql
