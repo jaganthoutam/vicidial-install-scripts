@@ -221,14 +221,14 @@ make install
 #Change PHP config
 
 echo "Download the PHP ini file from Git"
-wget -O /etc/php.ini https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/php.ini
+wget -O /etc/php.ini https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/php.ini
 
 mkdir /tmp/eaccelerator
 chmod 0777 /tmp/eaccelerator
 php -v
 
 echo "Donwload httpd.cof file from git"
-wget -O /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/httpd.conf
+wget -O /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/httpd.conf
 
 
 #Install Dahdi
@@ -314,7 +314,7 @@ echo 'Continuing...'
 
 #Get astguiclient.conf file
 echo "" > /etc/astguiclient.conf
-wget -O /etc/astguiclient.conf https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/astguiclient.conf
+wget -O /etc/astguiclient.conf https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/astguiclient.conf
 echo "Replace IP address in Default"
 echo "%%%%%%%%%Please Enter This Server IP ADD%%%%%%%%%%%%"
 read serveripadd
@@ -333,13 +333,13 @@ echo "Replace OLD IP. You need to Enter your Current IP here"
 /usr/share/astguiclient/ADMIN_update_server_ip.pl --old-server_ip=10.10.10.15
 
 #Install Crontab
-wget -O /root/crontab-file https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/crontab
+wget -O /root/crontab-file https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/crontab
 crontab /root/crontab-file
 crontab -l
 
 #Install rc.local
 > /etc/rc.d/rc.local
-wget -O /etc/rc.d/rc.local https://raw.githubusercontent.com/jaganthoutam/vicidial-install-centos7/main/rc.local
+wget -O /etc/rc.d/rc.local https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/rc.local
 chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 systemctl start rc-local
