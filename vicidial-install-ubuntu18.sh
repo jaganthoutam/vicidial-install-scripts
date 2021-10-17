@@ -6,7 +6,7 @@ sudo add-apt-repository ppa:ondrej/php  -y
 sudo apt-get update
 sudo apt-get install build-essential linux-headers-`uname -r` subversion unzip libjansson-dev sqlite autoconf automake  libxml2-dev libncurses5-dev libsqlite3-dev  -y 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
-sudo apt update sudo apt-get install apache2 apache2-bin apache2-data libapache2-mod-php5.6 php5.6 php5.6-xcache php5.6-dev php5.6-mbstring php5.6-cli php5.6-common php5.6-json php5.6-mysql php5.6-readline sox lame screen libnet-telnet-perl php5.6-mysqli libasterisk-agi-perl mysql-server libelf-dev autogen libtool shtool libdbd-mysql-perl libmysqlclient-dev libsrtp-dev uuid-dev libssl-dev git curl wget -y
+sudo apt update sudo apt-get install apache2 apache2-bin apache2-data libapache2-mod-php5.6 php5.6 php5.6-xcache php5.6-dev php5.6-mbstring php5.6-cli php5.6-common php5.6-json php5.6-mysql php5.6-readline sox lame screen libnet-telnet-perl php5.6-mysqli libasterisk-agi-perl mariadb-server libelf-dev autogen libtool shtool libdbd-mysql-perl libmysqlclient-dev libsrtp-dev uuid-dev libssl-dev git curl wget -y
 #Special package for ASTblind and ASTloop(ip_relay need this package)
 apt-get install libc6-i386
 
