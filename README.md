@@ -1,7 +1,5 @@
-#  CentOS7 VICIDIAL INSTALLATION SCRIPT
-# Install pre_requisites for vididial 
-
-
+# VICIDIAL INSTALLATION SCRIPTS
+# Centos vididial Install pre_requisites 
 
 ```
 yum check-update
@@ -24,9 +22,12 @@ reboot
 
 ```
 git clone https://github.com/jaganthoutam/vicidial-install-centos7.git
-cd vicidial-install-centos7
-chmod +x vicidial-install.sh
-./vicidial-install.sh
+cd vicidial-install-scripts
+```
+# Excute Centos vididial Install
+```
+chmod +x vicidial-install-centos7.sh
+./vicidial-install-centos7.sh
 ```
 # Install WEBRTC for VICIDIAL Now
 # DO THIS IF YOU HAVE PUBLIC DOMAIN WITH PUBLIC IP ONLY
