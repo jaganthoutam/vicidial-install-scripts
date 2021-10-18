@@ -24,11 +24,19 @@ reboot
 git clone https://github.com/jaganthoutam/vicidial-install-centos7.git
 cd vicidial-install-scripts
 ```
+
 # Excute Centos vididial Install
 ```
 chmod +x vicidial-install-centos7.sh
 ./vicidial-install-centos7.sh
 ```
+
+# Excute Ubuntu vididial Install
+```
+chmod +x vicidial-install-ubuntu18.sh
+./vicidial-install-ubuntu18.sh
+```
+
 # Install WEBRTC for VICIDIAL Now
 # DO THIS IF YOU HAVE PUBLIC DOMAIN WITH PUBLIC IP ONLY
 
