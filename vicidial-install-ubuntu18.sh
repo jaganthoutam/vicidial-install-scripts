@@ -214,7 +214,7 @@ wget -O /etc/astguiclient.conf https://raw.githubusercontent.com/jaganthoutam/vi
 echo "Replace IP address in Default"
 echo "%%%%%%%%%Please Enter This Server IP ADD%%%%%%%%%%%%"
 read serveripadd
-sed -i s/SERVERIP/"$serveripadd"/g /etc/astguiclient.conf
+sed -i 's/$serveripadd/'$serveripadd'/g' /etc/astguiclient.conf
 echo "Install VICIDIAL"
 echo "Copy sample configuration files to /etc/asterisk/ SET TO  Y*"
 perl install.pl
