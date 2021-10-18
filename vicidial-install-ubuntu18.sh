@@ -13,67 +13,6 @@ sudo apt-get install apache2 apache2-bin apache2-data libapache2-mod-php5.6 php5
 #Special package for ASTblind and ASTloop(ip_relay need this package)
 apt-get install libc6-i386
 
-
-# Fix MySQL 
-cp /etc/mysql/my.cnf /etc/mysql/my.cnf.original
-
-echo "" > /etc/mysql/my.cnf
-
-
-cat <<MYSQLCONF>> /etc/mysql/my.cnf
-[mysql.server]
-user = mysql
-#basedir = /var/lib
-[client]
-port = 3306
-socket = /var/lib/mysql/mysql.sock
-[mysqld]
-datadir = /var/lib/mysql
-#tmpdir = /home/mysql_tmp
-socket = /var/lib/mysql/mysql.sock
-user = mysql
-old_passwords = 0
-ft_min_word_len = 3
-max_connections = 800
-max_allowed_packet = 32M
-skip-external-locking
-log-error = /var/log/mysql/mysqld.log
-query-cache-type = 1
-query-cache-size = 32M
-long_query_time = 1
-#slow_query_log = 1
-#slow_query_log_file = /var/log/mysqld/slow-queries.log
-tmp_table_size = 128M
-join_buffer_size = 1M
-read_rnd_buffer_size = 16M
-myisam_sort_buffer_size = 64M
-max_tmp_tables = 64
-thread_cache_size = 8
-# If using replication, uncomment log-bin below
-#log-bin = mysql-bin
-[mysqldump]
-quick
-max_allowed_packet = 16M
-[mysql]
-no-auto-rehash
-[isamchk]
-key_buffer = 256M
-sort_buffer_size = 256M
-read_buffer = 2M
-write_buffer = 2M
-[myisamchk]
-key_buffer = 256M
-sort_buffer_size = 256M
-read_buffer = 2M
-write_buffer = 2M
-[mysqlhotcopy]
-interactive-timeout
-[mysqld_safe]
-#log-error = /var/log/mysqld/mysqld.log
-#pid-file = /var/run/mysqld/mysqld.pid
-MYSQLCONF
-
-
 #Install Jansson
 cd /usr/src/
 wget http://www.digip.org/jansson/releases/jansson-2.5.tar.gz
@@ -85,7 +24,6 @@ make clean
 make
 make install 
 ldconfig
-
 
 #Install CPAMN
 cd /usr/bin/
