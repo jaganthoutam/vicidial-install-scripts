@@ -169,8 +169,7 @@ crontab /root/crontab-file
 crontab -l
 
 #Install rc.local
-> /etc/rc.d/rc.local
-wget -O /etc/rc.local https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/rc.local
+=wget -O /etc/rc.local https://raw.githubusercontent.com/jaganthoutam/vicidial-install-scripts/main/rc.local
 chmod +x /etc/rc.local
 systemctl enable rc-local
 systemctl start rc-local
