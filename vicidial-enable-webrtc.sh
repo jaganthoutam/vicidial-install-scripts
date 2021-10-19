@@ -5,7 +5,13 @@ cd /var/www/html/agc/
 git clone https://github.com/chornyitaras/PBXWebPhone.git
 
 echo "Install certbot for LetsEncrypt"
-yum -y install certbot python2-certbot-apache mod_ssl
+if [ -f /etc/redhat-release ]; then
+	yum -y install certbot python2-certbot-apache mod_ssl
+fi
+if [ -f /etc/lsb-release ]; then
+	sudo add-apt-repository ppa:certbot/certbot
+	sudo apt install python-certbot-apache
+fi
 
 echo "Enter the DOMAIN NAME HERE. ***********IF YOU DONT HAVE ONE PLEASE DONT CONTINUE: "
 read DOMAINNAME
