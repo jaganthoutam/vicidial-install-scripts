@@ -68,6 +68,7 @@ dtlssetup=actpass' where template_id='SIP_generic';"
 
 echo "update the Phone tables to set is_webphone to Y deffault"
 mysql -e "use asterisk; ALTER TABLE phones MODIFY COLUMN is_webphone ENUM('Y','N','Y_API_LAUNCH') default 'Y';"
+mysql -e "use asterisk; update phones set template_id='SIP_generic';"
 
 #Update the 6666 user permissions
 #echo "VICIDIAL 6666 PASSWORD"
